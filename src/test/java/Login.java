@@ -11,7 +11,11 @@ public class Login extends TestBse{
         public void LoginPositive () {
 
             String email = "qwe777@gmail.com", password = "123@Qwe123";
-
+            app.getUser(). openLoginForm();
+            app.getUser(). fillLoginForm(email, password);
+            app.getUser(). submitRegistration();
+            app.getUser(). pause(3000);
+            Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
         }
 
     }

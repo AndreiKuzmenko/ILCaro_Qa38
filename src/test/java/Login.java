@@ -7,7 +7,10 @@ import org.testng.annotations.Test;
 
 public class Login extends TestBse{
     @BeforeMethod
-    public void preconditions(){
+    public void precondition(){
+        if(app.getUser().isLogged()){
+            app.getUser().logout();
+        }
 
     }
 
@@ -47,10 +50,11 @@ public class Login extends TestBse{
             app.getUser(). openLoginForm();
             app.getUser(). fillLoginForm(user);
             app.getUser(). submitLogin();
-
+     app.getUser(). pause(3000);
+     Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
         }
         @AfterMethod
-    public void postconditions(){
+    public void postcondition(){
 
         }
 

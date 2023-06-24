@@ -55,8 +55,7 @@ public class Login extends TestBse{
         }
         @AfterMethod
     public void postcondition(){
-
+        app.getUser().clickOkButton();
         }
-
 
     }

@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92fe8d5e-4e7b-4b47-87d5-f22b28d6571b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Login.java" afterDir="false" />
     </list>
@@ -45,7 +48,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.Login.LoginPositiveUserData">
+  <component name="RunManager" selected="Gradle.Login">
     <configuration name="Login" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -144,10 +147,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Login" />
         <item itemvalue="Gradle.Login.LoginPositiveUserData" />
         <item itemvalue="Gradle.Login.LoginPositiveUser" />
         <item itemvalue="Gradle.Login.LoginPositive" />
-        <item itemvalue="Gradle.Login" />
       </list>
     </recent_temporary>
   </component>

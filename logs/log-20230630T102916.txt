@@ -1,0 +1,1 @@
+10:29:32  INFO  TestBse - registrationPositive starts with credential success: login joe_1770@mail.com & password: $Asdf1234

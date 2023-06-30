@@ -1,0 +1,4 @@
+10:47:46  INFO  TestBse - openRegistrationForm invoked
+10:47:52  INFO  TestBse - fillRegistrationForm invoked
+10:47:52  INFO  TestBse - submitLogin invoked
+10:47:52  INFO  TestBse - registrationPositive starts with credential success: login joe_2866@mail.com & password: $Asdf1234

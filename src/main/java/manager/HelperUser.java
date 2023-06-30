@@ -49,8 +49,8 @@ public class HelperUser extends HelperBase{
         //v1
        // click(By.cssSelector("label[for='terms-of-use']"));
         //v2
-       // JavascriptExecutor js = (JavascriptExecutor) wd;
-       // js.executeScript("");
+//        JavascriptExecutor js = (JavascriptExecutor) wd;
+//         js.executeScript("document.querySelector('#terms-of-use').click();");
         //v3
         Rectangle rect = wd.findElement(By.cssSelector("div.checkbox-container")).getRect();
         int x = rect.getX() + 5;

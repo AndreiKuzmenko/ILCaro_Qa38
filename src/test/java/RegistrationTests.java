@@ -22,8 +22,13 @@ public class RegistrationTests extends TestBse{
                 .withPassword("$Asdf1234");
 
         app.getUser().openRegistrationForm();
+        logger.info("openRegistrationForm invoked");
         app.getUser().fillRegistrationForm(user);
+        logger.info("fillRegistrationForm invoked");
         app.getUser().submitLogin();
+        logger.info("submitLogin invoked");
+        logger.info("registrationPositive starts with credential success: login " +
+                 user.getEmail() +" & password: " + user.getPassword());
         Assert.assertTrue(app.getUser().isLoggedSuccess());
 
     }
@@ -38,6 +43,7 @@ public class RegistrationTests extends TestBse{
         app.getUser().openRegistrationForm();
         app.getUser().fillRegistrationForm(user);
         app.getUser().submitLogin();
+
     }
     @Test
     public void registrationNegative2(){

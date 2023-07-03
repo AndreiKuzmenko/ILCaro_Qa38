@@ -1,0 +1,16 @@
+14:52:53  INFO  TestBse - Method LoginPositiveUserData is started
+14:52:53  INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //*[.=' Logout ']
+14:52:58  INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //*[.=' Logout '] is found
+14:52:58  INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //*[.=' Log in ']
+14:52:58  INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //*[.=' Log in '] is found
+14:52:58  INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //input[@id='email']
+14:52:58  INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //input[@id='email'] is found
+14:52:59  INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //input[@id='password']
+14:52:59  INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //input[@id='password'] is found
+14:52:59  INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //button[@type='submit']
+14:52:59  INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //button[@type='submit'] is found
+14:53:02  INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //button
+14:53:02  INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //button is found
+14:53:02  INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //button[@type='button']
+14:53:02  INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //button[@type='button'] is found
+14:53:02  INFO  TestBse - ================================================================

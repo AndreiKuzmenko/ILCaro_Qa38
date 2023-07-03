@@ -2,6 +2,7 @@ package manager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterSuite;
@@ -11,7 +12,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Application {
     Logger logger = LoggerFactory.getLogger(Application.class);
-    WebDriver wd;
+   // WebDriver wd;
+    EventFiringWebDriver wd;
     HelperUser user;
     HelperCar car;
 
@@ -29,7 +31,9 @@ public class Application {
 
     @BeforeSuite
     public void init(){
-        wd = new ChromeDriver();
+      //  wd = new ChromeDriver();
+        wd = new EventFiringWebDriver(new ChromeDriver());
+        wd.register(new WebDriverListener());
         user = new HelperUser(wd);
         car = new HelperCar(wd);
       //  wd.manage().window().maximize();

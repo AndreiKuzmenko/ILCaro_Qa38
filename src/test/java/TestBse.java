@@ -1,4 +1,5 @@
 import manager.Application;
+import org.openqa.selenium.remote.BrowserType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterMethod;
@@ -10,7 +11,10 @@ import java.lang.reflect.Method;
 
 public class TestBse {
     Logger logger = LoggerFactory.getLogger(TestBse.class);
-    static Application app = new Application();
+
+    static Application app = new Application(
+            System.getProperty("browser", BrowserType.CHROME)
+    );
     @BeforeSuite
     public void setUp(){
         app.init();

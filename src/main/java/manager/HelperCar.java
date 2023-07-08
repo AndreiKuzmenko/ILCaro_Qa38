@@ -8,8 +8,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class HelperCar extends HelperBase {
+    Logger logger = LoggerFactory.getLogger(HelperCar.class);
     public HelperCar(WebDriver wd) {
         super(wd);
     }

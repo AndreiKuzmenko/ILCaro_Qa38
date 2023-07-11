@@ -1,3 +1,4 @@
+import manager.ProviderData;
 import manager.TestNgListener;
 import models.User;
 import org.openqa.selenium.By;
@@ -10,6 +11,8 @@ import org.testng.annotations.Test;
 @Listeners(TestNgListener.class)
 
 public class Login extends TestBse{
+
+
     @BeforeMethod
     public void precondition(){
         if(app.getUser().isLogged()){
@@ -57,9 +60,23 @@ public class Login extends TestBse{
      app.getUser(). pause(3000);
      Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
         }
-        @AfterMethod
+    @Test(dataProvider = "usetDto", dataProviderClass = ProviderData.class)
+    public void LoginPositiveUserDTO(User user){
+//        User user = new User()
+//                .withEmail("qwe777@gmail.com")
+//                .withPassword("123@Qwe123")
+//                ;
+
+        app.getUser(). openLoginForm();
+        app.getUser(). fillLoginForm(user);
+        app.getUser(). submitLogin();
+        app.getUser(). pause(3000);
+        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
+    }
+    @AfterMethod
     public void postcondition(){
         app.getUser().clickOkButton();
-        }
-
     }
+
+}
+

@@ -47,7 +47,7 @@ public class HelperUser extends HelperBase{
     public void clickCheckbox(){
         System.out.println("clicked checkbox");
         //v1
-       // click(By.cssSelector("label[for='terms-of-use']"));
+        // click(By.cssSelector("label[for='terms-of-use']"));
         //v2
 //        JavascriptExecutor js = (JavascriptExecutor) wd;
 //         js.executeScript("document.querySelector('#terms-of-use').click();");
@@ -56,7 +56,10 @@ public class HelperUser extends HelperBase{
         int x = rect.getX() + 5;
         int y = rect.getY() + rect.getHeight() / 4;
         Actions actions = new Actions(wd);
-        actions.moveByOffset(x, y).click().perform();
+        try {
+            actions.moveByOffset(x, y).click().perform();
+        }
+        catch(Exception e) {}
 
     }
 

@@ -16,10 +16,13 @@ public class ProviderData {
         list.add(new Object[]{new User()
                 .withEmail("qwe777@gmail.com")
                 .withPassword("123@Qwe123")
+                .withName("Roy")
+                .withLastName("Smith")
         });
         list.add(new Object[]{new User()
                 .withEmail("qwe777@gmail.com")
                 .withPassword("123@Qwe123")
+                
         });
         list.add(new Object[]{new User()
                 .withEmail("qwe777@gmail.com")

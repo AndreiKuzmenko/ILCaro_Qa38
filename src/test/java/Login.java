@@ -60,7 +60,7 @@ public class Login extends TestBse{
      app.getUser(). pause(3000);
      Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
         }
-    @Test(dataProvider = "usetDto", dataProviderClass = ProviderData.class)
+    @Test(dataProvider = "userDto", dataProviderClass = ProviderData.class)
     public void LoginPositiveUserDTO(User user){
 //        User user = new User()
 //                .withEmail("qwe777@gmail.com")
@@ -70,8 +70,7 @@ public class Login extends TestBse{
         app.getUser(). openLoginForm();
         app.getUser(). fillLoginForm(user);
         app.getUser(). submitLogin();
-        app.getUser(). pause(3000);
-        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
+        Assert.assertTrue(app.getUser().isLoggedSuccess());
     }
     @AfterMethod
     public void postcondition(){

@@ -21,6 +21,12 @@ public class Application {
 
     String browser;
 
+    HelperSearch search;
+
+    public HelperSearch getSearch() {
+        return search;
+    }
+
     public Application(String browser) {
         this.browser = browser;
     }
@@ -50,6 +56,7 @@ public class Application {
         wd.register(new WebDriverListener());
         user = new HelperUser(wd);
         car = new HelperCar(wd);
+        search = new HelperSearch(wd);
       //  wd.manage().window().maximize();
         wd.navigate().to("https://ilcarro.web.app/search");
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

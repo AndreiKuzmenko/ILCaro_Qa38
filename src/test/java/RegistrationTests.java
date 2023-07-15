@@ -1,3 +1,4 @@
+import manager.ProviderData;
 import manager.TestNgListener;
 import models.User;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -7,18 +8,18 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 @Listeners(TestNgListener.class)
-public class RegistrationTests extends TestBse{
-    EventFiringWebDriver wd;
+public class RegistrationTests extends TestBse {
 
 
 
     @BeforeMethod
-    public void precondition(){
-        if(app.getUser().isLogged()) app.getUser().logout();
+    public void precondition() {
+        if (app.getUser().isLogged()) app.getUser().logout();
     }
+
     @Test
-    public void registrationPositive(){
-        int i = (int)(System.currentTimeMillis()/1000)%3600;
+    public void registrationPositive() {
+        int i = (int) (System.currentTimeMillis() / 1000) % 3600;
         User user = new User()
                 .withName("Joy")
                 .withLastName("Klopp")
@@ -33,13 +34,15 @@ public class RegistrationTests extends TestBse{
         logger.info("submitLogin invoked");
         logger.info("registrationPositive starts with credentials: login "
                 + user.getEmail() + " & password: " + user.getPassword());
+        app.getUser().clickOkButton();
+
 
         Assert.assertTrue(app.getUser().isLoggedSuccess());
     }
 
     @Test
-    public void registrationNegative(){
-        int i = (int)(System.currentTimeMillis()/1000)%3600;
+    public void registrationNegative() {
+        int i = (int) (System.currentTimeMillis() / 1000) % 3600;
         User user = new User()
                 .withName("Wack")
                 .withLastName("Smith")
@@ -52,7 +55,8 @@ public class RegistrationTests extends TestBse{
 
 
     }
-//    @Test
+
+    //    @Test
 //    public void registrationNegative2(){
 //        int i = (int)(System.currentTimeMillis()/1000)%3600;
 //        User user = new User()
@@ -70,4 +74,24 @@ public class RegistrationTests extends TestBse{
 //    public void postcondition(){
 //        app.getUser().clickOkButton();
 //    }
+    @Test(dataProvider = "userDtoCSV", dataProviderClass = ProviderData.class)
+    public void registrationPositiveDTO(User user) {
+        //  int i = (int)(System.currentTimeMillis()/1000)%3600;
+//    User user = new User()
+//            .withName("Joy")
+//            .withLastName("Klopp")
+//            .withEmail("joy_" + i + "@mail.com")
+//            .withPassword("$Asdf1234");
+
+        app.getUser().openRegistrationForm();
+        logger.info("openRegistrationForm invoked");
+        app.getUser().fillRegistrationForm(user);
+        logger.info("fillRegistrationForm invoked");
+        app.getUser().submitLogin();
+        logger.info("submitLogin invoked");
+        logger.info("registrationPositive starts with credentials: login "
+                + user.getEmail() + " & password: " + user.getPassword());
+        app.getUser().clickOkButton();
+        Assert.assertTrue(app.getUser().isLoggedSuccess());
+    }
 }

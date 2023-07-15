@@ -49,19 +49,19 @@ public class HelperUser extends HelperBase{
         //v1
         // click(By.cssSelector("label[for='terms-of-use']"));
         //v2
-//        JavascriptExecutor js = (JavascriptExecutor) wd;
-//         js.executeScript("document.querySelector('#terms-of-use').click();");
+        JavascriptExecutor js = (JavascriptExecutor) wd;
+         js.executeScript("document.querySelector('#terms-of-use').click();");
         //v3
-        Rectangle rect = wd.findElement(By.cssSelector("div.checkbox-container")).getRect();
-        int x = rect.getX() + 5;
-        int y = rect.getY() + rect.getHeight() / 4;
-        Actions actions = new Actions(wd);
-        try {
-            actions.moveByOffset(x, y).click().perform();
-        }
-        catch(Exception e) {}
-
-    }
+//        Rectangle rect = wd.findElement(By.cssSelector("div.checkbox-container")).getRect();
+//        int x = rect.getX() + 5;
+//        int y = rect.getY() + rect.getHeight() / 4;
+//        Actions actions = new Actions(wd);
+//        try {
+//            actions.moveByOffset(x, y).click().perform();
+//        }
+//        catch(Exception e) {}
+//
+   }
 
     // method signature - type + name + parameters types
     public void submitLogin(){

@@ -22,16 +22,28 @@ public class Login extends TestBse{
     }
 
 
-        @Test
-        public void LoginPositive () {
+    @Test
+    public void LoginPositive () {
 
-            String email = "qwe777@gmail.com", password = "123@Qwe123";
-            app.getUser(). openLoginForm();
-            app.getUser(). fillLoginForm(email, password);
-            app.getUser(). submitLogin();
-            app.getUser(). pause(3000);
-            Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
-        }    @Test
+        String email = "qwe777@gmail.com", password = "123@Qwe123";
+        app.getUser(). openLoginForm();
+        app.getUser(). fillLoginForm(email, password);
+        app.getUser(). submitLogin();
+        app.getUser(). pause(3000);
+        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
+    }
+
+    @Test
+    public void LoginPositiveProperties () {
+
+//        String email = "qwe777@gmail.com", password = "123@Qwe123";
+        app.getUser(). openLoginForm();
+        app.getUser(). fillLoginForm(app.getEmail(),app.getPassword());
+        app.getUser(). submitLogin();
+        app.getUser(). pause(3000);
+        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
+    }
+    @Test
         public void LoginPositiveUser () {
 //User user = new User("qwe777@gmail.com","123@Qwe123");
         User user = new User()

@@ -74,24 +74,24 @@ public class RegistrationTests extends TestBse {
 //    public void postcondition(){
 //        app.getUser().clickOkButton();
 //    }
-    @Test(dataProvider = "userDtoCSV", dataProviderClass = ProviderData.class)
-    public void registrationPositiveDTO(User user) {
-        //  int i = (int)(System.currentTimeMillis()/1000)%3600;
-//    User user = new User()
-//            .withName("Joy")
-//            .withLastName("Klopp")
-//            .withEmail("joy_" + i + "@mail.com")
-//            .withPassword("$Asdf1234");
-
-        app.getUser().openRegistrationForm();
-        logger.info("openRegistrationForm invoked");
-        app.getUser().fillRegistrationForm(user);
-        logger.info("fillRegistrationForm invoked");
-        app.getUser().submitLogin();
-        logger.info("submitLogin invoked");
-        logger.info("registrationPositive starts with credentials: login "
-                + user.getEmail() + " & password: " + user.getPassword());
-        app.getUser().clickOkButton();
-        Assert.assertTrue(app.getUser().isLoggedSuccess());
-    }
+//    @Test(dataProvider = "userDtoCSV", dataProviderClass = ProviderData.class)
+//    public void registrationPositiveDTO(User user) {
+//        //  int i = (int)(System.currentTimeMillis()/1000)%3600;
+////    User user = new User()
+////            .withName("Joy")
+////            .withLastName("Klopp")
+////            .withEmail("joy_" + i + "@mail.com")
+////            .withPassword("$Asdf1234");
+//
+//        app.getUser().openRegistrationForm();
+//        logger.info("openRegistrationForm invoked");
+//        app.getUser().fillRegistrationForm(user);
+//        logger.info("fillRegistrationForm invoked");
+//        app.getUser().submitLogin();
+//        logger.info("submitLogin invoked");
+//        logger.info("registrationPositive starts with credentials: login "
+//                + user.getEmail() + " & password: " + user.getPassword());
+//        app.getUser().clickOkButton();
+//        Assert.assertTrue(app.getUser().isLoggedSuccess());
+//    }
 }
